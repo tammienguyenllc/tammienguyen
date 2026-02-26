@@ -1,0 +1,106 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fff;
+    padding: 40px;
+}
+
+/* Header & Nav */
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.logo h1 {
+    font-weight: 400;
+    letter-spacing: 4px;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 30px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, .active {
+    color: #aaa;
+}
+
+/* Portfolio Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    background: #f9f9f9;
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Hover Effect */
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .overlay {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 20px; }
+    .gallery { grid-template-columns: 1fr; }
+}
